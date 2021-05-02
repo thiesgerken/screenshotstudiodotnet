@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <?define ProductName="$(fileVersion.ProductName($(var.ProjectTargetPath)))" ?>
+  <?define CompanyName="$(fileVersion.CompanyName($(var.ProjectTargetPath)))" ?>
+  <?define ProductVersion="$(fileVersion.ProductVersion($(var.ProjectTargetPath)))" ?>
+
+
+  <Product Id="8bcb6f94-9cfe-4d9d-8951-436ac9eaa1f2" Name="ScreenshotStudio.Net" Language="1033" Version="$(var.ProductVersion)" Manufacturer="$(var.CompanyName)" UpgradeCode="c085461d-790d-4c17-880e-fe54504c2d1c">
+    <Package InstallerVersion="200" Compressed="yes" />
+
+    <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLLOCATION" Name="$(var.ProductName)">
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="ScreenshotStudio.Net"/>
+      </Directory>
+    </Directory>
+
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="StartMenuShortcuts" Guid="{86bd0955-a214-4133-9105-00d618645c22}">
+        <Shortcut Id="ApplicationStartMenuShortcut"
+                  Name="ScreenshotStudio.Net"
+                  Description="ScreenshotStudio.Net"
+                  Target="[INSTALLLOCATION]ScreenshotStudioDotNet.exe"
+                  WorkingDirectory="APPLICATIONROOTDIRECTORY"/>
+        <Shortcut Id="UninstallProduct"
+                  Name="Uninstall ScreenshotStudio.Net"
+                  Target="[System64Folder]msiexec.exe"
+                  Arguments="/x [ProductCode]"
+                  Description="Uninstalls ScreenshotStudio.Net" />
+        <util:InternetShortcut Id="WebsiteShortcut"
+                               Name="ScreenshotStudio.Net Website"
+                               Target="http://www.screenshotstudio.net"/>
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\ScreenshotStudioDotNet" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+
+    <Feature Id="Main" Title="Executables" Level="1">
+      <ComponentGroupRef Id="main" />
+    </Feature>
+
+    <Feature Id="Main_de" Title="German Language Files" Level="1">
+      <ComponentGroupRef Id="main_de" />
+    </Feature>
+
+    <Feature Id="StartMenuShortcuts" Title="Start Menu Shortcuts" Level="1">
+      <ComponentRef Id="StartMenuShortcuts" />
+    </Feature>
+
+    <PropertyRef Id="NETFRAMEWORK35"/>
+
+    <Condition Message="This application is only supported on Windows Vista, Windows 7, Windows Server 2008, or higher.">
+      <![CDATA[Installed OR (VersionNT >= 600)]]>
+    </Condition>
+
+    <Condition Message="This application requires .NET Framework 3.5. Please install the .NET Framework then run this installer again.">
+      <![CDATA[Installed OR NETFRAMEWORK35]]>
+    </Condition>
+   
+    <UIRef Id="WixUI_Minimal" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+  </Product>
+</Wix>

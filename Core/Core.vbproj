@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{97476560-7BEC-4FCF-A4E7-5BC101D9906F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ScreenshotStudioDotNet.Core</RootNamespace>
+    <AssemblyName>ScreenshotStudioDotNet.Core</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <AssemblyOriginatorKeyFile>Core.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>None</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0bd534235ffc4d0e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f3891a77a8a8eed1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aero\AeroForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aero\DwmDisabledActions.vb" />
+    <Compile Include="Aero\Margins.vb" />
+    <Compile Include="Aero\NativeMethods.vb" />
+    <Compile Include="Controls\InputDialog.Designer.vb">
+      <DependentUpon>InputDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\InputDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Line.Designer.vb">
+      <DependentUpon>Line.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Line.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LineDirection.vb" />
+    <Compile Include="Email\Mapi.vb" />
+    <Compile Include="Email\NativeMethods.vb" />
+    <Compile Include="Extensibility\IArgumentPlugin.vb" />
+    <Compile Include="Extensibility\IEffect.vb" />
+    <Compile Include="Extensibility\ITriggerManager.vb" />
+    <Compile Include="Extensibility\PluginArgumentDesigner.Designer.vb">
+      <DependentUpon>PluginArgumentDesigner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Extensibility\PluginArgumentDesigner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Extensibility\PluginSettingsPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Extensibility\OutputPicker.Designer.vb">
+      <DependentUpon>OutputPicker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Extensibility\OutputPicker.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Extensibility\PluginSettingsBase.vb" />
+    <Compile Include="Extensibility\TriggerTriggeredEventArgs.vb" />
+    <Compile Include="History\ViewableDictionary.vb" />
+    <Compile Include="History\ViewableDictionaryConverter.vb" />
+    <Compile Include="History\ViewableDictionaryPropertyDescriptor.vb" />
+    <Compile Include="History\Views.vb" />
+    <Compile Include="Macros\ComponentTypes.vb" />
+    <Compile Include="Macros\ArgumentMacroComponent.vb" />
+    <Compile Include="Macros\MacroManager.Designer.vb">
+      <DependentUpon>MacroManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Macros\MacroManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Macros\MultipleMacroComponent.vb" />
+    <Compile Include="Macros\DelayMacroComponent.vb" />
+    <Compile Include="Macros\EffectMacroComponent.vb" />
+    <Compile Include="Macros\DisabledMacroComponent.vb" />
+    <Compile Include="Macros\OutputMacroComponent.vb" />
+    <Compile Include="Macros\TypeMacroComponent.vb" />
+    <Compile Include="Macros\MacroComponent.vb" />
+    <Compile Include="Macros\MacroGenerator.Designer.vb">
+      <DependentUpon>MacroGenerator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Macros\MacroGenerator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Macros\TriggerMacroComponent.vb" />
+    <Compile Include="Misc\Extensions.vb" />
+    <Compile Include="Misc\GraphicHelpers.vb" />
+    <Compile Include="Controls\ColorSelectionButton.Designer.vb">
+      <DependentUpon>ColorSelectionButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ColorSelectionButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Serialization\SerializableDictionary.vb" />
+    <Compile Include="Colorization\Colorization.vb" />
+    <Compile Include="Colorization\ColorizationDatabase.vb" />
+    <Compile Include="SettingsPanels\QuickStartSettingsPanel.Designer.vb">
+      <DependentUpon>QuickStartSettingsPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPanels\QuickStartSettingsPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SettingsPanels\ScreensSettingsPanel.Designer.vb">
+      <DependentUpon>ScreensSettingsPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPanels\ScreensSettingsPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Settings\SettingsPanel.Designer.vb">
+      <DependentUpon>SettingsPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\SettingsPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="History\EntryProperties.vb" />
+    <Compile Include="History\GlobalizedCategoryAttribute.vb">
+    </Compile>
+    <Compile Include="History\GlobalizedObject.vb" />
+    <Compile Include="History\GlobalizedPropertyDescriptor.vb" />
+    <Compile Include="History\HistoryEntry.vb" />
+    <Compile Include="History\HistoryViewer.Designer.vb">
+      <DependentUpon>HistoryViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="History\HistoryViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="History\SearchErrorEventArgs.vb" />
+    <Compile Include="History\ObjectSearcher.vb" />
+    <Compile Include="History\PropertyOrderAttribute.vb" />
+    <Compile Include="History\RelevanceComparer.vb" />
+    <Compile Include="History\ScreenshotHistory.vb" />
+    <Compile Include="Controls\NativeMethods.vb" />
+    <Compile Include="Controls\WatermarkTextbox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Localization\Strings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Logging\LogViewer.Designer.vb">
+      <DependentUpon>LogViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Logging\LogViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Macros\MacroDatabase.vb" />
+    <Compile Include="Serialization\SerializableList.vb" />
+    <Compile Include="Misc\FileNameMaskProcessor.vb" />
+    <Compile Include="Controls\FormStateSaver.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Logging\LogEntry.vb" />
+    <Compile Include="Logging\Log.vb" />
+    <Compile Include="Screenshots\Screenshot.vb" />
+    <Compile Include="Serialization\Serializer.vb" />
+    <Compile Include="Settings\Settings.vb" />
+    <Compile Include="Settings\StaticProperties.vb" />
+    <Compile Include="Extensibility\IOutput.vb" />
+    <Compile Include="Extensibility\IPlugin.vb" />
+    <Compile Include="Extensibility\IScreenshotType.vb" />
+    <Compile Include="Macros\Macro.vb" />
+    <Compile Include="Screenshots\MultipleParameters.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Extensibility\Plugin.vb" />
+    <Compile Include="Extensibility\PluginDatabase.vb" />
+    <Compile Include="Screenshots\ScreenshotTakenEventArgs.vb" />
+    <Compile Include="Screenshots\Shape.vb" />
+    <Compile Include="Screenshots\ScreenHelpers.vb" />
+    <Compile Include="Screenshots\ScreenshotCreator.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\InputDialog.resx">
+      <DependentUpon>InputDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Line.resx">
+      <DependentUpon>Line.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extensibility\OutputPicker.resx">
+      <DependentUpon>OutputPicker.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extensibility\PluginArgumentDesigner.resx">
+      <DependentUpon>PluginArgumentDesigner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="History\HistoryViewer.de.resx">
+      <DependentUpon>HistoryViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="History\HistoryViewer.resx">
+      <DependentUpon>HistoryViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\Strings.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\Strings.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logging\LogViewer.de.resx">
+      <DependentUpon>LogViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logging\LogViewer.resx">
+      <DependentUpon>LogViewer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Macros\MacroGenerator.resx">
+      <DependentUpon>MacroGenerator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Macros\MacroManager.resx">
+      <DependentUpon>MacroManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ColorSelectionButton.resx">
+      <DependentUpon>ColorSelectionButton.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsPanels\QuickStartSettingsPanel.de.resx">
+      <DependentUpon>QuickStartSettingsPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsPanels\QuickStartSettingsPanel.resx">
+      <DependentUpon>QuickStartSettingsPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsPanels\ScreensSettingsPanel.de.resx">
+      <DependentUpon>ScreensSettingsPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsPanels\ScreensSettingsPanel.resx">
+      <DependentUpon>ScreensSettingsPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\SettingsPanel.resx">
+      <DependentUpon>SettingsPanel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core.snk" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VisualBasic.PowerPacks.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\delete.png" />
+    <None Include="Resources\settings_16.png" />
+    <None Include="Resources\delete_12.png" />
+    <Content Include="Resources\new.ico" />
+    <Content Include="Resources\settings.ico" />
+    <Content Include="Resources\settings.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+    <!-- Delete the file because I can't figure out how to force the SGen task. -->
+    <Delete Files="$(TargetDir)$(TargetName).XmlSerializers.dll" ContinueOnError="true" />
+    <SGen BuildAssemblyName="$(TargetFileName)" BuildAssemblyPath="$(OutputPath)" References="@(ReferencePath)" ShouldGenerateSerializer="true" UseProxyTypes="false" KeyContainer="$(KeyContainerName)" KeyFile="$(KeyOriginatorFile)" DelaySign="$(DelaySign)" ToolPath="$(SGenToolPath)">
+      <Output TaskParameter="SerializationAssembly" ItemName="SerializationAssembly" />
+    </SGen>
+  </Target>
+</Project>
